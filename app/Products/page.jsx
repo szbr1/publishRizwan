@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbBrandDisney } from "react-icons/tb";
@@ -7,12 +7,12 @@ import { FiX } from "react-icons/fi";
 import { useSwipeable } from "react-swipeable"; // Import the hook
 
 const Products = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0); // Explicitly type as number
-  const [direction, setDirection] = useState<number>(0); // Explicitly type as number
-  const [showPopup, setShowPopup] = useState<boolean>(false); // Explicitly type as boolean
-  const [selectedCountry, setSelectedCountry] = useState<string>("United Kingdom"); // Explicitly type as string
-  const [selectedMonths, setSelectedMonths] = useState<number>(1); // Explicitly type as number
-  const [price, setPrice] = useState<number>(0); // Explicitly type as number
+  const [currentIndex, setCurrentIndex] = useState(0); // Removed type annotation
+  const [direction, setDirection] = useState(0); // Removed type annotation
+  const [showPopup, setShowPopup] = useState(false); // Removed type annotation
+  const [selectedCountry, setSelectedCountry] = useState("United Kingdom"); // Removed type annotation
+  const [selectedMonths, setSelectedMonths] = useState(1); // Removed type annotation
+  const [price, setPrice] = useState(0); // Removed type annotation
 
   const products = [
     {
@@ -24,8 +24,8 @@ const Products = () => {
         1: { PKR: 800, USD: 15, GBP: 12 },
         3: { PKR: 2100, USD: 40, GBP: 32 },
         6: { PKR: 4000, USD: 75, GBP: 60 },
-        12: { PKR: 7200, USD: 140, GBP: 110 }
-      }
+        12: { PKR: 7200, USD: 140, GBP: 110 },
+      },
     },
     {
       id: 2,
@@ -36,18 +36,18 @@ const Products = () => {
         1: { PKR: 500, USD: 10, GBP: 8 },
         3: { PKR: 1400, USD: 27, GBP: 22 },
         6: { PKR: 2700, USD: 50, GBP: 40 },
-        12: { PKR: 5000, USD: 90, GBP: 75 }
-      }
-    }
+        12: { PKR: 5000, USD: 90, GBP: 75 },
+      },
+    },
   ];
 
   const slideVariants = {
-    enter: (direction: number) => ({
+    enter: (direction) => ({
       x: direction > 0 ? 1000 : -1000,
       y: 0,
       opacity: 0,
       rotateY: direction > 0 ? -45 : 45,
-      scale: 0.8
+      scale: 0.8,
     }),
     center: {
       x: 0,
@@ -59,19 +59,19 @@ const Products = () => {
         duration: 0.8,
         type: "spring",
         stiffness: 300,
-        damping: 30
-      }
+        damping: 30,
+      },
     },
-    exit: (direction: number) => ({
+    exit: (direction) => ({
       x: direction < 0 ? 1000 : -1000,
       y: 0,
       opacity: 0,
       rotateY: direction < 0 ? 45 : -45,
       scale: 0.8,
       transition: {
-        duration: 0.5
-      }
-    })
+        duration: 0.5,
+      },
+    }),
   };
 
   const getPrice = () => {
@@ -82,7 +82,7 @@ const Products = () => {
         : selectedCountry === "United Kingdom"
         ? "GBP"
         : "PKR";
-    return product.prices[selectedMonths as 1 | 3 | 6 | 12][currency];
+    return product.prices[selectedMonths][currency];
   };
 
   useEffect(() => {
@@ -111,7 +111,7 @@ Price: *${currency} ${price}*%0A
   };
 
   // Swipe handlers
-  const handleSwiped = (eventData: any) => {
+  const handleSwiped = (eventData) => {
     if (eventData.dir === "Left") {
       setCurrentIndex((prev) => (prev === products.length - 1 ? 0 : prev + 1));
     } else if (eventData.dir === "Right") {
@@ -121,7 +121,7 @@ Price: *${currency} ${price}*%0A
 
   const swipeHandlers = useSwipeable({
     onSwiped: handleSwiped,
-    trackMouse: true
+    trackMouse: true,
   });
 
   return (
@@ -216,17 +216,19 @@ Price: *${currency} ${price}*%0A
                     </select>
                   </label>
 
-                  <div className="text-xl font-semibold text-gray-800">
-                    Price: {selectedCountry === "United States" ? "$" : selectedCountry === "United Kingdom" ? "£" : "PKR"} {price}
+                  <div className="text-lg text-gray-800 mt-4">
+                    Price: <strong>{selectedCountry === "United States" ? "$" : selectedCountry === "United Kingdom" ? "£" : "PKR"} {price}</strong>
                   </div>
+                </div>
 
+                <div className="mt-6 flex justify-center">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full px-6 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-700 transform transition-all duration-300"
+                    className="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold shadow-lg hover:bg-blue-700 transform transition-all duration-300"
                     onClick={handlePurchase}
                   >
-                    Purchase Now
+                    Purchase
                   </motion.button>
                 </div>
               </motion.div>

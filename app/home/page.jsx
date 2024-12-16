@@ -8,28 +8,12 @@ import { FiX, FiSearch, FiLoader } from "react-icons/fi";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { TbBrandDisney } from "react-icons/tb";
 // Product Interface
-interface Product {
-  id: number;
-  name: string;
-  originalPrice: number;
-  discountedPrice: number;
-  icon: JSX.Element ;
-  description: string;
-  prices: {
-    PK: { [duration: string]: any; currency: string };
-    UK: { [duration: string]: any; currency: string };
-    US: { [duration: string]: any; currency: string };
-  };
-}
+
 
 // Modal Props Interface
-interface ModalProps {
-  isOpen: boolean;
-  product: Product | null;
-  onClose: () => void;
-}
 
-const HowToOrderModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+
+const HowToOrderModal= ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -60,19 +44,19 @@ const HowToOrderModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   );
 };
 
-const PurchaseModal: React.FC<ModalProps> = ({ isOpen, product, onClose }) => {
-  const [selectedCountry, setSelectedCountry] = useState<string>("United Kingdom");
-  const [selectedMonths, setSelectedMonths] = useState<string | null>("1 Month");
+const PurchaseModal = ({ isOpen, product, onClose }) => {
+  const [selectedCountry, setSelectedCountry] = useState("United Kingdom");
+  const [selectedMonths, setSelectedMonths] = useState("1 Month");
 
   if (!isOpen || !product) return null;
 
   // Map country to the corresponding code in prices
-  const countryMapping: { [key: string]: string } = {
+  const countryMapping= {
     "United Kingdom": "UK",
     Pakistan: "PK",
     "United States": "US",
   };
-  const countryKey = countryMapping[selectedCountry] as "PK" | "UK" | "US";
+  const countryKey = countryMapping[selectedCountry] ;
 
   // Safely access price
   const price =
@@ -176,7 +160,7 @@ Price: *${currency}${price}*%0A
 const HomePage = () => {
   // ... other states
   const [visibleProducts, setVisibleProducts] = useState(8);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHowToOrderModalOpen, setIsHowToOrderModalOpen] = useState(false);
 
@@ -235,7 +219,7 @@ const HomePage = () => {
   };
   
   
-  const products: Product[] = [
+  const products = [
     {
       id: 1,
       name: "YouTube Premium",
@@ -294,6 +278,7 @@ const HomePage = () => {
       name: "Dinsney+",
       originalPrice: 20,
       discountedPrice: 7,
+      
       icon: <TbBrandDisney className="text-5xl text-disney-blue" />,
       description: "Disney+ is a streaming service offering Disney, Pixar, Marvel, Star Wars, and National Geographic content.",
       prices: {
