@@ -13,7 +13,7 @@ import { useState } from "react";
 const InfoPage = () => {
   const [complaintText, setComplaintText] = useState("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Format the complaint text for WhatsApp
     const formattedText = encodeURIComponent(`*New Complaint:*\n${complaintText}`);

@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/about/page.js", "app/Complain/page.js", "app/footer/page.js", "app/home/page.js", "app/Navbar/page.js", "app/Payment/page.js", "app/Products/page.js", "app/reviews/page.js", "app/reviews/page.jsx", "app/Products/page.jsx", "app/Payment/page.jsx", "app/home/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/about/page.js", "app/Complain/page.js", "app/footer/page.js", "app/home/page.js", "app/Navbar/page.js", "app/Payment/page.js", "app/Products/page.js", "app/reviews/page.js", "app/reviews/page.jsx", "app/Products/page.jsx", "app/Payment/page.jsx", "app/home/page.jsx", "app/about/page.jsx", "app/Complain/page.jsx", "app/footer/page.jsx"],
   "exclude": ["node_modules"]
 }

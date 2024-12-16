@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from './Navbar/page';
@@ -25,12 +25,7 @@ export default function RootLayout({
     document.documentElement.classList.toggle('dark', savedTheme === 'dark');
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark');
-  };
+  
 
   return (
     <html lang="en" className={theme}>
