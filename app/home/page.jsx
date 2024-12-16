@@ -228,9 +228,9 @@ const HomePage = () => {
       icon: <FaYoutube className="text-5xl text-red-600" />,
       description: "Ad-free streaming, background play, and downloads",
       prices: {
-        PK: { "1 Month": 400, "3 Months": 1160, "6 Months": 2200, "12 Months": 4200, currency: "PKR" },
-        UK: { "1 Month": 4, "3 Months": 11, "6 Months": 20, "12 Months": 35, currency: "£" },
-        US: { "1 Month": 5.10, "3 Months": 14.40, "6 Months": 26, "12 Months": 45, currency: "$" },
+        PK: { "1 Month": "000", "3 Months": "000", "6 Months": "000", "12 Months": "000", currency: "PKR" },
+        UK: { "1 Month": 5.5, "3 Months": 15, "6 Months": 29, "12 Months": 49, currency: "£" },
+        US: { "1 Month": 7, "3 Months": 19, "6 Months": 37, "12 Months": 63, currency: "$" },
       },
     },
     {
@@ -242,9 +242,9 @@ const HomePage = () => {
 
       description: "Stream your favorite shows and movies",
       prices: {
-        PK: { "1 Month": 380, "3 Months": 1090, "6 Months": 2000, "12 Months": 3600, currency: "PKR" },
-        UK: { "1 Month": 3, "3 Months": 8, "6 Months": 14, "12 Months": 27, currency: "£" },
-        US: { "1 Month": 4, "3 Months": 11, "6 Months": 18, "12 Months": 35, currency: "$" },
+        PK: { "1 Month": "000", "3 Months": "000", "6 Months": "000", "12 Months": "000", currency: "PKR" },
+        UK: { "1 Month": 4.99, "3 Months": 13, "6 Months": 26, "12 Months": 45, currency: "£" },
+        US: { "1 Month": 7, "3 Months": 17, "6 Months": 33, "12 Months": 58, currency: "$" },
       },
     },
     {
@@ -255,9 +255,9 @@ const HomePage = () => {
       icon: <FaSpotify className="text-5xl text-green-600" />,
       description: "Stream your favorite music",
       prices: {
-        PK: { "1 Month": 600, "3 Months": 1700, "6 Months": 3200, "12 Months": 5900, currency: "PKR" },
-        UK: { "1 Month": 3, "3 Months": 8, "6 Months": 15, "12 Months": 30, currency: "£" },
-        US: { "1 Month": 4, "3 Months": 11, "6 Months": 20, "12 Months": 38, currency: "$" },
+        PK: { "1 Month": "000", "3 Months": "000", "6 Months": "000", "12 Months": "000", currency: "PKR" },
+        UK: { "1 Month": 5, "3 Months": 13.99, "6 Months": 25.99, "12 Months": 43.99, currency: "£" },
+        US: { "1 Month": 6.99, "3 Months": 17.99, "6 Months": 32.99, "12 Months": 55.99, currency: "$" },
       },
     },
     {
@@ -268,9 +268,9 @@ const HomePage = () => {
       icon: <SiNetflix className="text-5xl text-red-600" />,
       description: "Stream your favorite movies and shows",
       prices: {
-        PK: { "1 Month": 400, "3 Months": 1200, "6 Months": 2300, "12 Months": 400, currency: "PKR" },
-        UK: { "1 Month": 4, "3 Months": 10, "6 Months": 30, "12 Months": 55, currency: "£" },
-        US: { "1 Month": 5.50, "3 Months": 13, "6 Months": 40, "12 Months": 73, currency: "$" },
+        PK: { "1 Month": "000", "3 Months": "000", "6 Months": "000", "12 Months": "000", currency: "PKR" },
+        UK: { "1 Month": 8.99, "3 Months": 25.99, "6 Months": 49.99, "12 Months": 88.99, currency: "£" },
+        US: { "1 Month": 12, "3 Months": 33, "6 Months": 64, "12 Months": 114, currency: "$" },
       },
     },
     {
@@ -282,9 +282,9 @@ const HomePage = () => {
       icon: <TbBrandDisney className="text-5xl text-disney-blue" />,
       description: "Disney+ is a streaming service offering Disney, Pixar, Marvel, Star Wars, and National Geographic content.",
       prices: {
-        PK: { "1 Month": 600, "3 Months": 1700, "6 Months": 3200, "12 Months": 6000, currency: "PKR" },
-        UK: { "1 Month": 4, "3 Months": 10, "6 Months": 29, "12 Months": 54, currency: "£" },
-        US: { "1 Month": 5.50, "3 Months": 13, "6 Months": 40, "12 Months": 73, currency: "$" },
+        PK: { "1 Month": "000", "3 Months": "000", "6 Months": "000", "12 Months": "000", currency: "PKR" },
+        UK: { "1 Month": 4.99, "3 Months": 13.99, "6 Months": 25, "12 Months": 46.99, currency: "£" },
+        US: { "1 Month": 6.99, "3 Months": 18, "6 Months": 32, "12 Months": 60, currency: "$" },
       },
     },
     

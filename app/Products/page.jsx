@@ -17,26 +17,26 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      name: "Disney",
+      name: "Disney Gold",
       icon: <TbBrandDisney className="text-6xl text-disney-blue" />,
       description: "Unlock the magic of Disney with endless movies, shows, and unforgettable moments!",
       prices: {
-        1: { PKR: 800, USD: 15, GBP: 12 },
-        3: { PKR: 2100, USD: 40, GBP: 32 },
-        6: { PKR: 4000, USD: 75, GBP: 60 },
-        12: { PKR: 7200, USD: 140, GBP: 110 },
+        1: { PKR: "000", USD: 9.99, GBP: 7 },
+        3: { PKR: "000", USD: 25, GBP: 19 },
+        6: { PKR: "000", USD: 47, GBP: 36 },
+        12: { PKR: "000", USD: 79, GBP: 63 },
       },
     },
     {
       id: 2,
-      name: "Spotify Premium",
+      name: "Spotify Premium Gold",
       icon: <FaGoogleWallet className="text-6xl text-green-500" />,
       description: "Ad-free music streaming with offline downloads",
       prices: {
-        1: { PKR: 500, USD: 10, GBP: 8 },
-        3: { PKR: 1400, USD: 27, GBP: 22 },
-        6: { PKR: 2700, USD: 50, GBP: 40 },
-        12: { PKR: 5000, USD: 90, GBP: 75 },
+        1: { PKR: "000", USD: 9.99, GBP: 7 },
+        3: { PKR: "000", USD: 25, GBP: 19 },
+        6: { PKR: "000", USD: 45, GBP: 35 },
+        12: { PKR: "000", USD: 79, GBP: 62 },
       },
     },
   ];
