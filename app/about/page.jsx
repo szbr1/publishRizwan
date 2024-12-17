@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaSnapchatGhost } from 'react-icons/fa'; // Changed to Snapchat icon
 import { BiSolidUser } from 'react-icons/bi';
 import { AiFillStar } from 'react-icons/ai';
 import { BsShieldFillCheck } from 'react-icons/bs';
@@ -17,7 +17,7 @@ const AboutPage = () => {
       <div className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-16">
-         <Link href="./">  <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <Link href="./"><h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             About <span className="text-blue-500">Us</span>
           </h1></Link>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto">
@@ -27,27 +27,28 @@ const AboutPage = () => {
 
         {/* Contact Card */}
         <div className="max-w-md mx-auto mb-16">
-          <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:shadow-blue-500/20 transition-all duration-300">
+          <div className="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-8 shadow-lg hover:shadow-yellow-500/20 transition-all duration-300">
             <div className="flex items-center justify-center mb-6">
               <div className="relative">
-                <FaWhatsapp className="text-6xl text-green-500" />
-                <div className="absolute -inset-2 bg-green-500/20 rounded-full blur-xl animate-pulse"></div>
+                <FaSnapchatGhost className="text-6xl text-yellow-400" />
+                <div className="absolute -inset-2 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
               </div>
             </div>
             <h3 className="text-2xl font-bold text-white text-center mb-4">
               Connect With Us
             </h3>
             <a 
-              href="https://wa.me/923179393471" 
+              href="https://www.snapchat.com/add/sdcards1" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-xl transition-colors duration-300"
+              className="flex items-center justify-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-xl transition-colors duration-300"
             >
-              <span>+92 317 9393471</span>
+              <span>Add us: Sdcards1</span>
             </a>
           </div>
         </div>
 
+        {/* Rest of the code remains the same */}
         {/* Stats Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => (

@@ -234,6 +234,19 @@ const HomePage = () => {
       },
     },
     {
+      id: 4,
+      name: "Netflix 4K",
+      originalPrice: 20,
+      discountedPrice: 7,
+      icon: <SiNetflix className="text-5xl text-red-600" />,
+      description: "Premium Plan Complete Acc. Stream your favorite movies and shows",
+      prices: {
+        PK: { "1 Month": "000", "3 Months": "000", "6 Months": "000", "12 Months": "000", currency: "PKR" },
+        UK: { "1 Month": 8.99, "3 Months": 25.99, "6 Months": 49.99, "12 Months": 88.99, currency: "£" },
+        US: { "1 Month": 12, "3 Months": 33, "6 Months": 64, "12 Months": 114, currency: "$" },
+      },
+    },
+    {
       id: 2,
       name: "Amazon Prime",
       originalPrice: 8,
@@ -249,7 +262,7 @@ const HomePage = () => {
     },
     {
       id: 3,
-      name: "Spotify Gold",
+      name: "Spotify",
       originalPrice: 14,
       discountedPrice: 3,
       icon: <FaSpotify className="text-5xl text-green-600" />,
@@ -260,19 +273,7 @@ const HomePage = () => {
         US: { "1 Month": 6.99, "3 Months": 17.99, "6 Months": 32.99, "12 Months": 55.99, currency: "$" },
       },
     },
-    {
-      id: 4,
-      name: "Netflix",
-      originalPrice: 20,
-      discountedPrice: 7,
-      icon: <SiNetflix className="text-5xl text-red-600" />,
-      description: "Stream your favorite movies and shows",
-      prices: {
-        PK: { "1 Month": "000", "3 Months": "000", "6 Months": "000", "12 Months": "000", currency: "PKR" },
-        UK: { "1 Month": 8.99, "3 Months": 25.99, "6 Months": 49.99, "12 Months": 88.99, currency: "£" },
-        US: { "1 Month": 12, "3 Months": 33, "6 Months": 64, "12 Months": 114, currency: "$" },
-      },
-    },
+   
     {
       id: 5,
       name: "Dinsney+",

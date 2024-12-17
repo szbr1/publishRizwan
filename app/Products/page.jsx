@@ -21,10 +21,18 @@ const Products = () => {
       icon: <TbBrandDisney className="text-6xl text-disney-blue" />,
       description: "Unlock the magic of Disney with endless movies, shows, and unforgettable moments!",
       prices: {
-        1: { PKR: "000", USD: 9.99, GBP: 7 },
-        3: { PKR: "000", USD: 25, GBP: 19 },
-        6: { PKR: "000", USD: 47, GBP: 36 },
-        12: { PKR: "000", USD: 79, GBP: 63 },
+        1: { PKR: "000",
+           USD: { original: 20, discounted: 11.99 },
+            GBP: { original: 16, discounted: 8 } },
+        3: { PKR: "000",
+           USD: { original: 61, discounted: 25 },
+            GBP: { original: 48, discounted: 19 } },
+        6: { PKR: "000",
+           USD: { original: 122, discounted: 47 },
+            GBP: { original: 96, discounted: 36 } },
+        12: { PKR: "000",
+           USD: { original: 244, discounted: 79 },
+            GBP: { original: 192, discounted: 63 } },
       },
     },
     {
@@ -33,10 +41,18 @@ const Products = () => {
       icon: <FaGoogleWallet className="text-6xl text-green-500" />,
       description: "Ad-free music streaming with offline downloads",
       prices: {
-        1: { PKR: "000", USD: 9.99, GBP: 7 },
-        3: { PKR: "000", USD: 25, GBP: 19 },
-        6: { PKR: "000", USD: 45, GBP: 35 },
-        12: { PKR: "000", USD: 79, GBP: 62 },
+        1: { PKR: "000", 
+          USD: { original: 14.99, discounted: 9.99 },
+           GBP: { original: 17, discounted: 7 } },
+        3: { PKR: "000",
+           USD: { original: 64, discounted: 25 }, 
+           GBP: { original: 51, discounted: 19 } },
+        6: { PKR: "000",
+           USD: { original: 129, discounted: 45 },
+            GBP: { original: 102, discounted: 35 } },
+        12: { PKR: "000",
+           USD: { original: 260, discounted: 79 }, 
+           GBP: { original: 204, discounted: 89 } },
       },
     },
   ];
@@ -82,8 +98,9 @@ const Products = () => {
         : selectedCountry === "United Kingdom"
         ? "GBP"
         : "PKR";
-    return product.prices[selectedMonths][currency];
+    return product.prices[selectedMonths][currency].discounted;
   };
+  
 
   useEffect(() => {
     const price = getPrice();
@@ -217,8 +234,29 @@ Price: *${currency} ${price}*%0A
                   </label>
 
                   <div className="text-lg text-gray-800 mt-4">
-                    Price: <strong>{selectedCountry === "United States" ? "$" : selectedCountry === "United Kingdom" ? "£" : "PKR"} {price}</strong>
-                  </div>
+  {(() => {
+    const currency = selectedCountry === "United States" 
+      ? "USD" 
+      : selectedCountry === "United Kingdom" 
+      ? "GBP" 
+      : "PKR";
+      
+    return (
+      <>
+        <span className="line-through text-gray-500 mr-2">
+          {selectedCountry === "United States" ? "$" : selectedCountry === "United Kingdom" ? "£" : "PKR"} 
+          {products[currentIndex].prices[selectedMonths][currency].original}
+        </span>
+        <strong>
+          {selectedCountry === "United States" ? "$" : selectedCountry === "United Kingdom" ? "£" : "PKR"} 
+          {products[currentIndex].prices[selectedMonths][currency].discounted}
+        </strong>
+      </>
+    );
+  })()}
+</div>
+
+
                 </div>
 
                 <div className="mt-6 flex justify-center">
@@ -241,3 +279,4 @@ Price: *${currency} ${price}*%0A
 };
 
 export default Products;
+
